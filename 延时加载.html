@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        img{
+            width: 200px;
+            height: 250px;
+        }
+        body{
+            margin: 0;
+        }
+        img{
+            border: 0;
+            vertical-align: top;
+        }
+    </style>
+    <script src="jquery-1.10.1.min.js"></script>
+    <script>
+        $(function(){
+            $(window).on('load resize scroll',function(){
+                var winH = $(window).height();          //获取视口高度
+                var scrollH = $(window).scrollTop();    //获取滚动条高度
+                var totalH = winH + scrollH;
+//                //1.
+//                $('img').each(function(){
+//                    var imgT =  $(this).offset().top;   //获取img到文档顶部距离
+//                    if(imgT < totalH){
+//                        if($(this).attr('_src')){
+//                            var strStr = $(this).attr('_src');
+//                            $(this).attr('src',strStr);
+//                            $(this).removeAttr('_src');
+//                        }
+//                    }
+//                });
+                //2.
+                $('img').each(function(i,elem){
+                    var imgT = $(elem).offset().top;      //获取img到文档顶部距离
+                    if(imgT < totalH){
+                        if($(elem).attr('_src')){
+                            var srcStr = $(elem).attr('_src');
+                            $(elem).attr('src',srcStr);
+                            $(elem).removeAttr('_src');
+                        }
+                    }
+                })
+            })
+        })
+    </script>
+
+</head>
+<body>
+<div>
+    <img _src="img/1.jpg" alt=""/>
+    <img _src="img/2.jpg" alt=""/>
+    <img _src="img/3.jpg" alt=""/>
+    <img _src="img/4.jpg" alt=""/>
+    <img _src="img/5.jpg" alt=""/>
+    <img _src="img/6.jpg" alt=""/>
+    <img _src="img/7.jpg" alt=""/>
+    <img _src="img/8.jpg" alt=""/>
+    <img _src="img/9.jpg" alt=""/>
+    <img _src="img/10.jpg" alt=""/>
+    <img _src="img/11.jpg" alt=""/>
+    <img _src="img/12.jpg" alt=""/>
+    <img _src="img/13.jpg" alt=""/>
+    <img _src="img/14.jpg" alt=""/>
+    <img _src="img/15.jpg" alt=""/>
+    <img _src="img/16.jpg" alt=""/>
+    <img _src="img/17.jpg" alt=""/>
+    <img _src="img/18.jpg" alt=""/>
+    <img _src="img/19.jpg" alt=""/>
+    <img _src="img/20.jpg" alt=""/>
+    <img _src="img/21.jpg" alt=""/>
+    <img _src="img/22.jpg" alt=""/>
+    <img _src="img/23.jpg" alt=""/>
+    <img _src="img/24.jpg" alt=""/>
+    <img _src="img/25.jpg" alt=""/>
+    <img _src="img/26.jpg" alt=""/>
+</div>
+
+
+</body>
+
+</html>
